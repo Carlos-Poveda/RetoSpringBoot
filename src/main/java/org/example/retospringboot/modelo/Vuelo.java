@@ -3,16 +3,16 @@ package org.example.retospringboot.modelo;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @Entity
-@Table(name="hotel")
-public class Hotel {
+@Table(name="vuelo")
+public class Vuelo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String nombre;
-    private String zona;
+    private String detalles;
     private boolean reserva;
-    private Integer calidad; // de 1 a 5 estrellas
-    private String fecha_reserva;
+    private List<String> aeropuertos;
 }
