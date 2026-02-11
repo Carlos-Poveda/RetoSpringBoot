@@ -5,6 +5,7 @@ Este proyecto es una API REST para gestionar rutas, desarrollada con Spring Boot
 ## Recursos
 
 Los datos usados para la base de datos han sido obtenidos a través de https://datosabiertos.malaga.eu/dataset/rutas-arqueologicas
+
 En el archivo "DatosBD" se encuentra el JSON que se puede volcar en MongoDB para usar el programa
 
 ### Ruta
