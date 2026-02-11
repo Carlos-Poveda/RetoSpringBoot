@@ -9,30 +9,30 @@ Este proyecto es una API REST para gestionar rutas, desarrollada con Spring Boot
 El objeto `Ruta` tiene la siguiente estructura:
 
 ```json
-{
-  "id": "string",
-  "type": "string",
+  {
   "geometry": {
-    "type": "string",
     "coordinates": [
       "double",
       "double"
-    ]
+    ],
+    "type": "String"
   },
-  "geometry_name": "string",
+  "geometryName": "String",
+  "id": "String",
   "properties": {
-    "ogc_fid": "integer",
-    "punto": "string",
-    "x": "string",
-    "y": "string",
-    "nombre": "string",
-    "ubicacion": "string",
-    "direccion": "string",
-    "horario": "string",
-    "telefono": "string",
-    "web": "string",
-    "mas_informacion": "string"
-  }
+    "direccion": "String",
+    "horario": "String",
+    "masInformacion": "String",
+    "nombre": "String",
+    "ogcFid": "Integer",
+    "punto": "String",
+    "telefono": "String",
+    "ubicacion": "String",
+    "web": "String",
+    "x": "String",
+    "y": "String"
+  },
+  "type": "String"
 }
 ```
 
