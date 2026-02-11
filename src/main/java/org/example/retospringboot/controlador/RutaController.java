@@ -1,5 +1,6 @@
 package org.example.retospringboot.controlador;
 
+import org.example.retospringboot.excepcion.RutaNotFoundException;
 import org.example.retospringboot.modelo.Ruta;
 import org.example.retospringboot.persistencia.RutaRepository;
 import org.springframework.http.ResponseEntity;
@@ -23,13 +24,23 @@ class RutaController {
     // RUTA POR ID
     @GetMapping("/ruta_id/{id}")
     public Ruta findById(@PathVariable String id) {
-        return rutaRepository.findById(id).orElse(null);
+        Ruta ruta = rutaRepository.findById(id).orElse(null);
+        if (ruta != null) {
+            return ruta;
+            } else {
+            throw new RutaNotFoundException("No hay ninguna ruta con el id: "+id);
+        }
     }
 
     // RUTA POR NOMBRE
     @GetMapping("/ruta_nombre")
     public Ruta findByNombre(@RequestParam String nombre) {
-        return rutaRepository.findFirstByPropertiesNombre(nombre);
+        Ruta ruta = rutaRepository.findFirstByPropertiesNombre(nombre);
+        if (ruta != null) {
+            return ruta;
+        } else {
+            throw new RutaNotFoundException("No hay ninguna ruta con el nombre: "+nombre);
+        }
     }
 
     // AÑADIR RUTA
@@ -38,14 +49,22 @@ class RutaController {
         return rutaRepository.save(ruta);
     }
     // BORRAR RUTA POR NOMBRE
-    @DeleteMapping("/borrar_ruta_nombre") // Quitamos el /{nombre}
+    @DeleteMapping("/borrar_ruta_nombre")
     public void deleteByName(@RequestParam String nombre) {
-        rutaRepository.deleteRutaByPropertiesNombre(nombre);
+        Ruta ruta = rutaRepository.findFirstByPropertiesNombre(nombre);
+        if (ruta == null) {
+            throw new RutaNotFoundException("No hay ninguna ruta con el nombre: "+nombre);
+        }
+        rutaRepository.delete(ruta);
     }
     // BORRAR RUTA POR ID
     @DeleteMapping("/borrar_ruta_id/{id}")
     public void delete(@PathVariable String id) {
-        rutaRepository.deleteById(id);
+        Ruta ruta = rutaRepository.findById(id).orElse(null);
+        if (ruta == null) {
+            throw new RutaNotFoundException("No hay ninguna ruta con el id: "+id);
+        }
+        rutaRepository.delete(ruta);
     }
     // ACTUALIZAR RUTA POR ID
     @PutMapping("/actualizar_ruta_id/{id}")
@@ -55,7 +74,7 @@ class RutaController {
             rutaExistente.setProperties(ruta.getProperties());
             return rutaRepository.save(rutaExistente);
         } else {
-            return null;
+            throw new RutaNotFoundException("No hay ninguna ruta con el id: "+id);
         }
     }
     // Existe por id
@@ -64,7 +83,7 @@ class RutaController {
         if (rutaRepository.existsById(id)) {
             return ResponseEntity.ok().build(); // Devuelve Status 200
         } else {
-            return ResponseEntity.notFound().build(); // Devuelve Status 404
+            throw new RutaNotFoundException("No hay ninguna ruta con el id: "+id);
         }
     }
     // Existe por nombre
@@ -74,7 +93,7 @@ class RutaController {
         if (ruta != null) {
             return ResponseEntity.ok().build(); // Devuelve Status 200
             } else {
-            return ResponseEntity.notFound().build(); // Devuelve Status 404
+            throw new RutaNotFoundException("No hay ninguna ruta con el nombre: "+nombre);
         }
     }
 

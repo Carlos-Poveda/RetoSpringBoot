@@ -15,6 +15,8 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
 import tools.jackson.databind.ObjectMapper;
 
+import java.time.LocalDateTime;
+
 @Configuration
 @EnableWebSecurity
 public class SecuriryConfig {
@@ -39,7 +41,7 @@ public class SecuriryConfig {
         return ((request, response, authException) -> {
             response.setContentType("application/json");
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            ErrorResponseDTO error = new ErrorResponseDTO("Usuario no autorizado", "El usuario y la contraseña no coinciden",401);
+            ErrorResponseDTO error = new ErrorResponseDTO(LocalDateTime.now(),401,"Usuario no autorizado", "El usuario y la contraseña no coinciden");
             ObjectMapper mapper = new ObjectMapper();
             response.getWriter().write(mapper.writeValueAsString(error));
         });

@@ -6,8 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RutaRepository extends MongoRepository<Ruta,String> {
-    void deleteRutaByPropertiesNombre(String nombre);
+//    void deleteRutaByPropertiesNombre(String nombre);
     Ruta findFirstByPropertiesNombre(String nombre);
-
 
 }
