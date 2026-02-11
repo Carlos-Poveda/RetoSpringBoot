@@ -25,6 +25,8 @@ public class SecuriryConfig {
                         auth -> auth
                                 .requestMatchers(HttpMethod.GET,"/**").permitAll() // Permitir todos los GET
                                 .requestMatchers(HttpMethod.POST,"/**").authenticated() // Autenticar todos los POST
+                                .requestMatchers(HttpMethod.PUT,"/**").authenticated() // Autenticar todos los PUT
+                                .requestMatchers(HttpMethod.DELETE,"/**").authenticated() // Autenticar todos los DELETE
                                 .anyRequest().permitAll() // todo el resto lo permite
                 ).httpBasic(basic -> {
                     basic.authenticationEntryPoint(customAuthenticationEntryPoint());
@@ -42,7 +44,6 @@ public class SecuriryConfig {
             response.getWriter().write(mapper.writeValueAsString(error));
         });
     }
-
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withUsername("admin")
