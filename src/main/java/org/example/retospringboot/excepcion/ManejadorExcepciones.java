@@ -21,16 +21,4 @@ public class ManejadorExcepciones {
         );
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
-
-    // Manejar errores genéricos (500)
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponseDTO> handleGlobalException(Exception ex) {
-        ErrorResponseDTO error = new ErrorResponseDTO(
-                LocalDateTime.now(),
-                HttpStatus.INTERNAL_SERVER_ERROR.value(),
-                "Error interno del servidor",
-                ex.getMessage()
-        );
-        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
-    }
 }
