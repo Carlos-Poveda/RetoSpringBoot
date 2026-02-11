@@ -45,33 +45,31 @@ Recupera todas las rutas.
 **Ejemplo de respuesta:**
 
 ```json
-[
   {
-    "id": "6630b7fbac70582a4792a431",
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -16.25413,
-        28.46824
-      ]
-    },
-    "geometry_name": "the_geom",
-    "properties": {
-      "ogc_fid": 0,
-      "punto": "1",
-      "x": "375792.2",
-      "y": "3149411.1",
-      "nombre": "Museo de la Naturaleza y la Arqueología (MUNA)",
-      "ubicacion": "MNH",
-      "direccion": "C/ Fuente Morales, s/n",
-      "horario": "Martes a sábado de 9:00 a 19:00 h. Domingo, lunes y festivos de 10:00 a 17:00 h.",
-      "telefono": "922 535 816",
-      "web": "www.museosdetenerife.org",
-      "mas_informacion": ""
-    }
-  }
-]
+  "geometry": {
+    "coordinates": [
+      373283.08,
+      4065124.59
+    ],
+    "type": "Point"
+  },
+  "geometryName": "geometry",
+  "id": "698b0d8344bfd6b703922a25",
+  "properties": {
+    "direccion": "C/ RAMÓN FRANQUELO, 10",
+    "horario": "ACCESO LIBRE",
+    "masInformacion": "https://rutasarqueologicas.malaga.eu/punto-n-6",
+    "nombre": "TRAZA DE LA MURALLA",
+    "ogcFid": 6,
+    "punto": "6",
+    "telefono": "",
+    "ubicacion": "VÍA PÚBLICA",
+    "web": "",
+    "x": "373283.08",
+    "y": "4065124.59"
+  },
+  "type": "Feature"
+}
 ```
 
 ### GET /rutas/ruta_id/{id}
@@ -82,29 +80,29 @@ Recupera una ruta por su ID.
 
 ```json
 {
-  "id": "6630b7fbac70582a4792a431",
-  "type": "Feature",
   "geometry": {
-    "type": "Point",
     "coordinates": [
-      -16.25413,
-      28.46824
-    ]
+      373408.43,
+      4065043.79
+    ],
+    "type": "Point"
   },
-  "geometry_name": "the_geom",
+  "geometryName": "geometry",
+  "id": "698b0d8344bfd6b703922a23",
   "properties": {
-    "ogc_fid": 0,
-    "punto": "1",
-    "x": "375792.2",
-    "y": "3149411.1",
-    "nombre": "Museo de la Naturaleza y la Arqueología (MUNA)",
-    "ubicacion": "MNH",
-    "direccion": "C/ Fuente Morales, s/n",
-    "horario": "Martes a sábado de 9:00 a 19:00 h. Domingo, lunes y festivos de 10:00 a 17:00 h.",
-    "telefono": "922 535 816",
-    "web": "www.museosdetenerife.org",
-    "mas_informacion": ""
-  }
+    "direccion": "C/ GRANADA",
+    "horario": "ACCESO LIBRE",
+    "masInformacion": "https://rutasarqueologicas.malaga.eu/punto-n-4",
+    "nombre": "TRAZA DE LA MURALLA EN LA PUERTA DE GRANADA",
+    "ogcFid": 4,
+    "punto": "4",
+    "telefono": "",
+    "ubicacion": "",
+    "web": "",
+    "x": "373408.43",
+    "y": "4065043.79"
+  },
+  "type": "Feature"
 }
 ```
 
@@ -116,29 +114,29 @@ Recupera una ruta por su nombre.
 
 ```json
 {
-  "id": "6630b7fbac70582a4792a431",
-  "type": "Feature",
   "geometry": {
-    "type": "Point",
     "coordinates": [
-      -16.25413,
-      28.46824
-    ]
+      373396.14,
+      4065051.72
+    ],
+    "type": "Point"
   },
-  "geometry_name": "the_geom",
+  "geometryName": "geometry",
+  "id": "698b0d8344bfd6b703922a24",
   "properties": {
-    "ogc_fid": 0,
-    "punto": "1",
-    "x": "375792.2",
-    "y": "3149411.1",
-    "nombre": "Museo de la Naturaleza y la Arqueología (MUNA)",
-    "ubicacion": "MNH",
-    "direccion": "C/ Fuente Morales, s/n",
-    "horario": "Martes a sábado de 9:00 a 19:00 h. Domingo, lunes y festivos de 10:00 a 17:00 h.",
-    "telefono": "922 535 816",
-    "web": "www.museosdetenerife.org",
-    "mas_informacion": ""
-  }
+    "direccion": "C/ MEDINA CONDE, 3",
+    "horario": "CONSULTAR HORARIO",
+    "masInformacion": "https://rutasarqueologicas.malaga.eu/punto-n-5",
+    "nombre": "LIENZO Y TORRE DE LA MURALLA",
+    "ogcFid": 5,
+    "punto": "5",
+    "telefono": "",
+    "ubicacion": "LOCAL PRIVADO",
+    "web": "",
+    "x": "373396.14",
+    "y": "4065051.72"
+  },
+  "type": "Feature"
 }
 ```
 
@@ -150,28 +148,29 @@ Añade una nueva ruta.
 
 ```json
 {
-  "type": "Feature",
   "geometry": {
-    "type": "Point",
     "coordinates": [
-      -16.25413,
-      28.46824
-    ]
+      373246.53,
+      4065079.29
+    ],
+    "type": "Point"
   },
-  "geometry_name": "the_geom",
+  "geometryName": "geometry",
+  "id": "698b0d8344bfd6b703922a26",
   "properties": {
-    "ogc_fid": 0,
-    "punto": "1",
-    "x": "375792.2",
-    "y": "3149411.1",
-    "nombre": "Museo de la Naturaleza y la Arqueología (MUNA)",
-    "ubicacion": "MNH",
-    "direccion": "C/ Fuente Morales, s/n",
-    "horario": "Martes a sábado de 9:00 a 19:00 h. Domingo, lunes y festivos de 10:00 a 17:00 h.",
-    "telefono": "922 535 816",
-    "web": "www.museosdetenerife.org",
-    "mas_informacion": ""
-  }
+    "direccion": "C/ RAMÓN FRANQUELO, 2",
+    "horario": "CONSULTAR HORARIO",
+    "masInformacion": "https://rutasarqueologicas.malaga.eu/punto-n-7",
+    "nombre": "LIENZO DE LA MURALLA",
+    "ogcFid": 7,
+    "punto": "7",
+    "telefono": "",
+    "ubicacion": "LOCAL PRIVADO",
+    "web": "",
+    "x": "373246.53",
+    "y": "4065079.29"
+  },
+  "type": "Feature"
 }
 ```
 
@@ -190,29 +189,30 @@ Actualiza una ruta por su ID.
 **Ejemplo de body:**
 
 ```json
-{
-  "type": "Feature",
+  {
   "geometry": {
-    "type": "Point",
     "coordinates": [
-      -16.25413,
-      28.46824
-    ]
+      373205.95,
+      4065108.48
+    ],
+    "type": "Point"
   },
-  "geometry_name": "the_geom",
+  "geometryName": "geometry",
+  "id": "698b0d8344bfd6b703922a28",
   "properties": {
-    "ogc_fid": 0,
-    "punto": "1",
-    "x": "375792.2",
-    "y": "3149411.1",
-    "nombre": "Museo de la Naturaleza y la Arqueología (MUNA)",
-    "ubicacion": "MNH",
-    "direccion": "C/ Fuente Morales, s/n",
-    "horario": "Martes a sábado de 9:00 a 19:00 h. Domingo, lunes y festivos de 10:00 a 17:00 h.",
-    "telefono": "922 535 816",
-    "web": "www.museosdetenerife.org",
-    "mas_informacion": ""
-  }
+    "direccion": "C/ BEATAS, 15",
+    "horario": "LUNES 10:00-16:00, MARTES-DOMINGO: 10:0019:00",
+    "masInformacion": "https://rutasarqueologicas.malaga.eu/punto-n-9",
+    "nombre": "MURALLA MEDIEVAL",
+    "ogcFid": 9,
+    "punto": "9",
+    "telefono": "952210440",
+    "ubicacion": "MUSEO MIMMA",
+    "web": "https://www.musicaenaccion.com/",
+    "x": "373205.95",
+    "y": "4065108.48"
+  },
+  "type": "Feature"
 }
 ```
 
