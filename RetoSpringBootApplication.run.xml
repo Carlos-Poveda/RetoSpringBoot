@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RetoSpringBootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <envs>
+      <env name="DBURI" value="mongodb+srv://cpovedasanjose_db_user:vQPrKNv6qDe1Ip9T@clusterprueba.g0esbjb.mongodb.net/?appName=ClusterPrueba" />
+    </envs>
+    <module name="RetoSpringBoot" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.retospringboot.RetoSpringBootApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
